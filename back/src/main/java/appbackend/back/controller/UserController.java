@@ -26,11 +26,11 @@ public class UserController {
         return "Hello";
     }
 
-//    @CrossOrigin(origins = "http://localhost:5500")
-//    @GetMapping("/all")
-//    public List<UserModel> getAllUser() {
-//        return userService.getAllUser();
-//    }
+    @CrossOrigin(origins = "http://localhost:5500")
+    @GetMapping("/all")
+    public List<UserModel> getAllUser() {
+        return userService.getAllUser();
+    }
 //
 //    @CrossOrigin(origins = "http://localhost:5500")
 //    @PostMapping("/create")
