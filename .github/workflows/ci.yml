@@ -44,6 +44,8 @@ jobs:
       - name: cd to directory
         run: cd /home/runner/work/vdt-back/vdt-back/back
 
+      - name: cd to directory
+        run: pwd
       - name: Install dependencies
         run: mvn install -DskipTests=true
 
