@@ -26,27 +26,27 @@ public class UserController {
         return "Hello";
     }
 
-    @CrossOrigin(origins = "http://localhost:5500")
-    @GetMapping("/all")
-    public List<UserModel> getAllUser() {
-        return userService.getAllUser();
-    }
-
-    @CrossOrigin(origins = "http://localhost:5500")
-    @PostMapping("/create")
-    public ResponseEntity<String> createUser(@RequestBody UserModel userModel) {
-        return userService.addUser(userModel);
-    }
-
-    @CrossOrigin(origins = "http://localhost:5500")
-    @PutMapping("/update/{id}")
-    public ResponseEntity<String> createUser(@PathVariable(name = "id") int id, @RequestBody UserModel userModel) {
-        return userService.updateUser(id,userModel);
-    }
-
-    @CrossOrigin(origins = "http://localhost:5500")
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable(name = "id") int id ) {
-        return userService.deleteUser(id);
-    }
+//    @CrossOrigin(origins = "http://localhost:5500")
+//    @GetMapping("/all")
+//    public List<UserModel> getAllUser() {
+//        return userService.getAllUser();
+//    }
+//
+//    @CrossOrigin(origins = "http://localhost:5500")
+//    @PostMapping("/create")
+//    public ResponseEntity<String> createUser(@RequestBody UserModel userModel) {
+//        return userService.addUser(userModel);
+//    }
+//
+//    @CrossOrigin(origins = "http://localhost:5500")
+//    @PutMapping("/update/{id}")
+//    public ResponseEntity<String> createUser(@PathVariable(name = "id") int id, @RequestBody UserModel userModel) {
+//        return userService.updateUser(id,userModel);
+//    }
+//
+//    @CrossOrigin(origins = "http://localhost:5500")
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseEntity<String> deleteUser(@PathVariable(name = "id") int id ) {
+//        return userService.deleteUser(id);
+//    }
 }
