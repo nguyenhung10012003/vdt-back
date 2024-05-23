@@ -41,8 +41,5 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-maven-
             
-      - name: Install dependencies
-        run: cd back && mvn install -DskipTests=true
-
-      - name: Run tests
-        run: mvn test
+      - name: Install dependencies and run test
+        run: cd back && mvn install -DskipTests=true && mvn test
