@@ -26,15 +26,15 @@ public class UserService {
 
 
 
-//    public ResponseEntity<String> addUser(UserModel userModel) {
-//        try {
-//            userRepository.save(userModel);
-//            return new ResponseEntity<>("Success", HttpStatus.OK);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
-//        }
-//    }
+    public ResponseEntity<String> addUser(UserModel userModel) {
+        try {
+            userRepository.save(userModel);
+            return new ResponseEntity<>("Success", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
+        }
+    }
 //
 //    public ResponseEntity<String> updateUser(int id, UserModel userModel) {
 //        try {

@@ -31,13 +31,13 @@ public class UserController {
     public List<UserModel> getAllUser() {
         return userService.getAllUser();
     }
-//
-//    @CrossOrigin(origins = "http://localhost:5500")
-//    @PostMapping("/create")
-//    public ResponseEntity<String> createUser(@RequestBody UserModel userModel) {
-//        return userService.addUser(userModel);
-//    }
-//
+
+    @CrossOrigin(origins = "http://localhost:5500")
+    @PostMapping("/create")
+    public ResponseEntity<String> createUser(@RequestBody UserModel userModel) {
+        return userService.addUser(userModel);
+    }
+
 //    @CrossOrigin(origins = "http://localhost:5500")
 //    @PutMapping("/update/{id}")
 //    public ResponseEntity<String> createUser(@PathVariable(name = "id") int id, @RequestBody UserModel userModel) {

@@ -173,33 +173,33 @@ class UserServiceTest {
         assertEquals(1, result.size());
         assertEquals(testUser, result.get(0));
     }
-//
-//    @Test
-//    void addUser_Success() {
-//        // Setup mock behavior
-//        when(userRepository.save(testUser)).thenReturn(testUser);
-//
-//        // Call service method
-//        ResponseEntity<String> result = userService.addUser(testUser);
-//
-//        // Assert result
-//        assertEquals(HttpStatus.OK, result.getStatusCode());
-//        assertEquals("Success", result.getBody());
-//    }
-//
-//    @Test
-//    void addUser_Failed() {
-//        // Setup mock behavior
-//        when(userRepository.save(testUser)).thenThrow(new RuntimeException("Simulated exception"));
-//
-//        // Call service method
-//        ResponseEntity<String> result = userService.addUser(testUser);
-//
-//        // Assert result
-//        assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
-//        assertEquals("Failed", result.getBody());
-//    }
-//
+
+    @Test
+    void addUser_Success() {
+        // Setup mock behavior
+        when(userRepository.save(testUser)).thenReturn(testUser);
+
+        // Call service method
+        ResponseEntity<String> result = userService.addUser(testUser);
+
+        // Assert result
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+        assertEquals("Success", result.getBody());
+    }
+
+    @Test
+    void addUser_Failed() {
+        // Setup mock behavior
+        when(userRepository.save(testUser)).thenThrow(new RuntimeException("Simulated exception"));
+
+        // Call service method
+        ResponseEntity<String> result = userService.addUser(testUser);
+
+        // Assert result
+        assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
+        assertEquals("Failed", result.getBody());
+    }
+
 //    @Test
 //    void updateUser_Success() {
 //        // Setup mock behavior
