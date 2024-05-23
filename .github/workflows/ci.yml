@@ -40,6 +40,12 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+            
+      - name: Get pwd
+        run: pwd && ls
+
+      - name: Move directory
+        run: cd back
 
       - name: Install dependencies
         run: mvn install -DskipTests=true
