@@ -24,17 +24,3 @@ import java.util.Arrays;
     }
 }
 
-    //}
-//    @Configuration
-//    public class CorConfig implements WebMvcConfigurer {
-//
-//        @Override
-//        public void addCorsMappings(CorsRegistry registry) {
-//            registry.addMapping("/**")
-//                    .allowedMethods("*")
-//                    .allowedOrigins("*")
-//                    .allowedHeaders("*")
-//                    .allowCredentials(true)
-//                    .maxAge(3600);
-//        }
-//    }
