@@ -199,9 +199,10 @@ class UserServiceTest {
         assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
         assertEquals("Failed", result.getBody());
     }
-//
+
 //    @Test
 //    void updateUser_Success() {
+  
 //        // Setup mock behavior
 //        when(userRepository.findById(1)).thenReturn(Optional.of(testUser));
 //        when(userRepository.saveAndFlush(testUser)).thenReturn(testUser);
