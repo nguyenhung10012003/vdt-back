@@ -42,7 +42,7 @@ jobs:
       #       ${{ runner.os }}-maven-
             
       - name: cd to directory
-        run: cd /back $$ pwd
+        run: cd /home/runner/work/vdt-back/vdt-back/back
 
       - name: Install dependencies
         run: mvn install -DskipTests=true
