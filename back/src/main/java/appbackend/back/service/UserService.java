@@ -35,21 +35,21 @@ public class UserService {
             return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
         }
     }
-//
-//    public ResponseEntity<String> updateUser(int id, UserModel userModel) {
-//        try {
-//            UserModel user = userRepository.findById(id).orElse(null);
-//            if (user == null) {
-//                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
-//            }
-//            user.updateUser(userModel);
-//            userRepository.saveAndFlush(user);
-//            return new ResponseEntity<>("Success", HttpStatus.OK);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
-//    }
+
+    public ResponseEntity<String> updateUser(int id, UserModel userModel) {
+        try {
+            UserModel user = userRepository.findById(id).orElse(null);
+            if (user == null) {
+                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+            }
+            user.updateUser(userModel);
+            userRepository.saveAndFlush(user);
+            return new ResponseEntity<>("Success", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
+    }
 //
 //    public ResponseEntity<String> deleteUser(int id) {
 //        try {
