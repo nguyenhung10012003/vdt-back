@@ -128,44 +128,44 @@ class UserServiceTest {
         assertEquals("Failed", result.getBody());
     }
 
-//    @Test
-//    void deleteUser_Success() {
-//        // Setup mock behavior
-//        when(userRepository.existsById(1)).thenReturn(true);
-//
-//        // Call service method
-//        ResponseEntity<String> result = userService.deleteUser(1);
-//
-//        // Assert result
-//        assertEquals(HttpStatus.OK, result.getStatusCode());
-//        assertEquals("Success", result.getBody());
-//        verify(userRepository).deleteById(1);
-//    }
-//
-//    @Test
-//    void deleteUser_UserNotFound() {
-//        // Setup mock behavior
-//        when(userRepository.existsById(1)).thenReturn(false);
-//
-//        // Call service method
-//        ResponseEntity<String> result = userService.deleteUser(1);
-//
-//        // Assert result
-//        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
-//        assertEquals("User not found", result.getBody());
-//    }
-//
-//    @Test
-//    void deleteUser_Failed() {
-//        // Setup mock behavior
-//        when(userRepository.existsById(1)).thenReturn(true);
-//        doThrow(new RuntimeException("Simulated exception")).when(userRepository).deleteById(1);
-//
-//        // Call service method
-//        ResponseEntity<String> result = userService.deleteUser(1);
-//
-//        // Assert result
-//        assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
-//        assertEquals("Failed", result.getBody());
-//    }
+    @Test
+    void deleteUser_Success() {
+        // Setup mock behavior
+        when(userRepository.existsById(1)).thenReturn(true);
+
+        // Call service method
+        ResponseEntity<String> result = userService.deleteUser(1);
+
+        // Assert result
+        assertEquals(HttpStatus.OK, result.getStatusCode());
+        assertEquals("Success", result.getBody());
+        verify(userRepository).deleteById(1);
+    }
+
+    @Test
+    void deleteUser_UserNotFound() {
+        // Setup mock behavior
+        when(userRepository.existsById(1)).thenReturn(false);
+
+        // Call service method
+        ResponseEntity<String> result = userService.deleteUser(1);
+
+        // Assert result
+        assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
+        assertEquals("User not found", result.getBody());
+    }
+
+    @Test
+    void deleteUser_Failed() {
+        // Setup mock behavior
+        when(userRepository.existsById(1)).thenReturn(true);
+        doThrow(new RuntimeException("Simulated exception")).when(userRepository).deleteById(1);
+
+        // Call service method
+        ResponseEntity<String> result = userService.deleteUser(1);
+
+        // Assert result
+        assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
+        assertEquals("Failed", result.getBody());
+    }
 }

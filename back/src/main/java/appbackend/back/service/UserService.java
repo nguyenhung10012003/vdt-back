@@ -50,16 +50,16 @@ public class UserService {
         return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
     }
 
-//    public ResponseEntity<String> deleteUser(int id) {
-//        try {
-//            if (!userRepository.existsById(id)) {
-//                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
-//            }
-//            userRepository.deleteById(id);
-//            return new ResponseEntity<>("Success", HttpStatus.OK);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
-//    }
+    public ResponseEntity<String> deleteUser(int id) {
+        try {
+            if (!userRepository.existsById(id)) {
+                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+            }
+            userRepository.deleteById(id);
+            return new ResponseEntity<>("Success", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
+    }
 }
