@@ -43,10 +43,10 @@ public class UserController {
     public ResponseEntity<String> createUser(@PathVariable(name = "id") int id, @RequestBody UserModel userModel) {
         return userService.updateUser(id,userModel);
     }
-//
-//    @CrossOrigin(origins = "http://localhost:5500")
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity<String> deleteUser(@PathVariable(name = "id") int id ) {
-//        return userService.deleteUser(id);
-//    }
+
+    @CrossOrigin(origins = "http://localhost:5500")
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable(name = "id") int id ) {
+        return userService.deleteUser(id);
+    }
 }
