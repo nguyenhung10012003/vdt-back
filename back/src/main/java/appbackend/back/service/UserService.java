@@ -2,7 +2,6 @@ package appbackend.back.service;
 
 import appbackend.back.model.UserModel;
 import appbackend.back.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,22 +34,22 @@ public class UserService {
             return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
         }
     }
-//
-//    public ResponseEntity<String> updateUser(int id, UserModel userModel) {
-//        try {
-//            UserModel user = userRepository.findById(id).orElse(null);
-//            if (user == null) {
-//                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
-//            }
-//            user.updateUser(userModel);
-//            userRepository.saveAndFlush(user);
-//            return new ResponseEntity<>("Success", HttpStatus.OK);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
-//    }
-//
+
+    public ResponseEntity<String> updateUser(int id, UserModel userModel) {
+        try {
+            UserModel user = userRepository.findById(id).orElse(null);
+            if (user == null) {
+                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+            }
+            user.updateUser(userModel);
+            userRepository.saveAndFlush(user);
+            return new ResponseEntity<>("Success", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
+    }
+
 //    public ResponseEntity<String> deleteUser(int id) {
 //        try {
 //            if (!userRepository.existsById(id)) {

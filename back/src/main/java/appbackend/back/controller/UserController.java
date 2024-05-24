@@ -38,11 +38,11 @@ public class UserController {
         return userService.addUser(userModel);
     }
 
-//    @CrossOrigin(origins = "http://localhost:5500")
-//    @PutMapping("/update/{id}")
-//    public ResponseEntity<String> createUser(@PathVariable(name = "id") int id, @RequestBody UserModel userModel) {
-//        return userService.updateUser(id,userModel);
-//    }
+    @CrossOrigin(origins = "http://localhost:5500")
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> createUser(@PathVariable(name = "id") int id, @RequestBody UserModel userModel) {
+        return userService.updateUser(id,userModel);
+    }
 //
 //    @CrossOrigin(origins = "http://localhost:5500")
 //    @DeleteMapping("/delete/{id}")
