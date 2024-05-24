@@ -2,7 +2,6 @@ package appbackend.back.service;
 
 import appbackend.back.model.UserModel;
 import appbackend.back.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,7 +49,7 @@ public class UserService {
         }
         return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
     }
-//
+
 //    public ResponseEntity<String> deleteUser(int id) {
 //        try {
 //            if (!userRepository.existsById(id)) {
