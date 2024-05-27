@@ -42,5 +42,5 @@ jobs:
             ${{ runner.os }}-maven-
             
       - name: Install dependencies and run test
-        run: cd back && mvn install -DskipTests=true && mvn test >> test.log 2>&1
+        run: cd back && mvn install -DskipTests=true && mvn test >> test.log 
    
