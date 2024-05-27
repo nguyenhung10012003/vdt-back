@@ -42,4 +42,9 @@ jobs:
             ${{ runner.os }}-maven-
             
       - name: Install dependencies and run test
-        run: cd back && mvn install -DskipTests=true && mvn test
+        run: cd back && mvn install -DskipTests=true && mvn test > test.log
+      - name: Upload test log
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-log
+          path: test.log
