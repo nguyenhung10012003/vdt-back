@@ -16,7 +16,7 @@ services:
 
   springboot:
     build:
-      context: ./back/vdt-back/back
+      context: .
     container_name: backend
     ports:
       - "8080:8080"
@@ -24,7 +24,7 @@ services:
       - mysql
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/backend_db
-      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: 123456
 
   frontend:
