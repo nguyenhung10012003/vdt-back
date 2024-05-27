@@ -22,8 +22,4 @@ jobs:
   
         - name: Build and Push Docker images
           run: |
-            #/home/runner/work/vdt-back/vdt-back/back
-            # docker build -t ${{ secrets.DOCKER_USERNAME }}/midterm:dtb_image /dtb && docker push ${{ secrets.DOCKER_USERNAME }}/midterm:dtb_image 
-            cd /home/runner/work/vdt-back/vdt-back/back && docker build -t ${{ secrets.DOCKER_USERNAME }}/midterm:back_image . && docker push ${{ secrets.DOCKER_USERNAME }}/midterm:back_image
-            # docker build -t ${{ secrets.DOCKER_USERNAME }}/midterm:front_image /vdt-front && docker push ${{ secrets.DOCKER_USERNAME }}/midterm:front_image
-
+            cd /home/runner/work/vdt-back/vdt-back/back && docker buildx build --platform linux/arm64 -t ${{ secrets.DOCKER_USERNAME }}/midterm:backend_image . && docker push ${{ secrets.DOCKER_USERNAME }}/midterm:backend_image
