@@ -5,12 +5,16 @@ import appbackend.back.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
 
@@ -61,5 +65,13 @@ public class UserService {
             e.printStackTrace();
         }
         return new ResponseEntity<>("Failed", HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserModel user = userRepository.findByEmail(username).orElseThrow(
+                () -> new UsernameNotFoundException(username));
+        if (user == null) throw new UsernameNotFoundException(username);
+        return user;
     }
 }

@@ -2,11 +2,17 @@ package appbackend.back.model;
 
 import jakarta.persistence.*;
 import org.apache.catalina.User;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 
 @Entity
 @Table(name = "user")
-public class UserModel {
+public class UserModel implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -14,10 +20,20 @@ public class UserModel {
 
     private int birth;
     private String email;
+    private String password;
     private String phone;
     private String gender;
     private String school;
     private String country;
+
+    private UserRole role;
+
+    public UserModel(UserModel user) {
+        this.name = user.getName();
+        this.birth = user.getBirth();
+        this.email = user.getEmail();
+        this.phone = user.getPhone();
+    }
 
     public String getCountry() {
         return country;
@@ -104,5 +120,40 @@ public class UserModel {
 
     public void setBirth(int birth) {
         this.birth = birth;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(this.role.name()));
+    }
+
+    @Override
+    public String getPassword() {
+        return this.password;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
 }
